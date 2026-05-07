@@ -1,0 +1,19 @@
+# Ficheiros objeto e binario
+*.o
+*.out
+*.exe
+
+#Ficheiros temporários
+.DS_Store
+
+# Ficheiros temporários vs
+*.swp
+*.swo
+*~
+
+# Pastas de editores/IDE
+.vscode/
+.idea/
+
+# Ficheiros de debug
+*.dSYM/
