@@ -204,7 +204,7 @@ int main()
             gerar_mapa_p_balcoes(marcados, urgencias);
             break;
         case 10:
-            gerar_mapa_receita_c_marcadas(marcados, urgencias);
+            gerar_mapa_receita_c_marcadas(marcados);
             break;
         case 11:
             printf("Sistema encerrado...\n");

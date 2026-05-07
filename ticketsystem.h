@@ -497,7 +497,6 @@ void gerar_mapa_media_espera_atendimento(TicketConsultaMarcada marcados[], Ticke
 void gerar_mapa_p_balcoes(TicketConsultaMarcada marcados[], TicketConsultaUrgencia urgencias[])
 {
     int inicio_dia, fim_dia, inicio_mes, fim_mes, inicio_ano, fim_ano;
-    int inicio_segundo, fim_segundo;
     int tamanho_marcados = 100;
     int tamanho_urgencias = 100;
     int conta_marcados = 0;  // contar quantos tickets de consulta marcada foram atendidos num intervalo de datas
@@ -592,7 +591,7 @@ void gerar_mapa_p_balcoes(TicketConsultaMarcada marcados[], TicketConsultaUrgenc
 }
 
 // Fubção para gerar mapas de receitas de consultas marcadas num intervalo de datas
-void gerar_mapa_receita_c_marcadas(TicketConsultaMarcada marcados[], TicketConsultaUrgencia urgencias[])
+void gerar_mapa_receita_c_marcadas(TicketConsultaMarcada marcados[])
 {
     int inicio_dia, fim_dia, inicio_mes, fim_mes, inicio_ano, fim_ano;
     int tamanho_marcados = 100;
