@@ -5,11 +5,8 @@ markdown
 ![Build](https://img.shields.io/badge/build-Makefile-green?style=flat-square)
 ![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20macOS%20%7C%20WSL-lightgrey?style=flat-square)
 ![Status](https://img.shields.io/badge/status-complete-brightgreen?style=flat-square)
-
-> A console-based ticket management system for a healthcare service point, developed in C.
-
 ---
-
+ A console-based ticket management system for a healthcare service point, developed in C.
 ## Overview
 
 This project simulates a ticketing system used in a healthcare environment. It manages the creation and handling of tickets for different types of appointments, applying validation rules and service constraints to ensure correct ticket processing.
