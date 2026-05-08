@@ -15,47 +15,63 @@ int main()
     TicketConsultaUrgencia urgencias[100];
     int numero_ticket_marcado = 0, numero_ticket_urgencia = 0; // contar os tickets de consulta marcada e urgência
 
-    printf("Bem-vindo ao Sistema de Tickets! A sequência de tickets será renovada.\n");
+    printf("\n==============================================================\n");
+    printf("\n");
+    printf("-----------Welcome to the Ticket Management System!-----------\n");
+    printf("\n==============================================================\n");
+    printf("\n");
 
     do
     {
-        printf("\n================== Sistema de Tickets ==================\n");
-        printf("\n");
-        printf("1. Gerar Ticket - Consulta Marcada\n");
-        printf("________________________________________________________\n");
-        printf("\n");
-        printf("2. Gerar Ticket - Consulta Urgência\n");
-        printf("________________________________________________________\n");
-        printf("\n");
-        printf("3. Exibir Tickets\n");
-        printf("________________________________________________________\n");
-        printf("\n");
-        printf("4. Atualizar Atendimento de Tickets de Consulta Marcada\n");
-        printf("________________________________________________________\n");
-        printf("\n");
-        printf("5. Atualizar Atendimento de Tickets de Consulta Urgência\n");
-        printf("________________________________________________________\n");
-        printf("\n");
-        printf("6. Triagem\n");
-        printf("________________________________________________________\n");
-        printf("\n======================== Mapas =========================\n");
-        printf("\n");
-        printf("7. Gerar mapa de volume de tickets atendidos\n");
-        printf("________________________________________________________\n");
-        printf("\n");
-        printf("8. Gerar mapa de médias de espera entre atendimento\n");
-        printf("________________________________________________________\n");
-        printf("\n");
-        printf("9. Gerar mapa de produtividade de balcões\n");
-        printf("________________________________________________________\n");
-        printf("\n");
-        printf("10. Gerar mapa de receitas de consultas marcadas\n");
-        printf("________________________________________________________\n");
-        printf("\n");
-        printf("11. Sair\n");
-        printf("________________________________________________________\n");
-        printf("\n");
-        printf("Selecione uma opção:\n");
+    printf("\n================== Ticket Management System ==================\n");
+    printf("\n");
+    printf("1. Generate Ticket - Scheduled Appointment\n");
+    printf("______________________________________________________________\n");
+    printf("\n");
+
+    printf("2. Generate Ticket - Emergency Appointment\n");
+    printf("______________________________________________________________\n");
+    printf("\n");
+
+    printf("3. Display Tickets\n");
+    printf("______________________________________________________________\n");
+    printf("\n");
+
+    printf("4. Update Scheduled Appointment Ticket Service\n");
+    printf("______________________________________________________________\n");
+    printf("\n");
+
+    printf("5. Update Emergency Appointment Ticket Service\n");
+    printf("______________________________________________________________\n");
+    printf("\n");
+
+    printf("6. Triage\n");
+    printf("______________________________________________________________\n");
+
+    printf("\n============================ Reports ==========================\n");
+    printf("\n");
+
+    printf("7. Generate Report - Attended Ticket Volume\n");
+    printf("______________________________________________________________\n");
+    printf("\n");
+
+    printf("8. Generate Report - Average Waiting Time\n");
+    printf("______________________________________________________________\n");
+    printf("\n");
+
+    printf("9. Generate Report - Counter Productivity\n");
+    printf("______________________________________________________________\n");
+    printf("\n");
+
+    printf("10. Generate Report - Scheduled Appointment Revenue\n");
+    printf("______________________________________________________________\n");
+    printf("\n");
+
+    printf("11. Exit\n");
+    printf("______________________________________________________________\n");
+    printf("\n");
+
+    printf("Select an option:\n");
         scanf("%d", &opcao);
 
         switch (opcao)
@@ -68,7 +84,7 @@ int main()
             }
             else
             {
-                printf("Fila de consultas marcadas cheia!\n");
+                printf("Scheduled appointment queue is full!\n");
             }
             break;
         case 2:
@@ -80,17 +96,17 @@ int main()
 
             else
             {
-                printf("Fila de urgências cheia!\n");
+                printf("Emergency appointment queue is full!\n");
             }
             break;
         case 3:
-            printf("---- Tickets de Consulta Marcada ----\n");
+            printf("---- Scheduled Appointment Tickets ----\n");
             for (int i = 0; i < numero_ticket_marcado; i++)
             {
                 imprimir_Ticket_Consulta_Marcada(&marcados[i]);
             }
             printf("\n");
-            printf("---- Tickets de Consulta de Urgência ----\n");
+            printf("---- Emergency Appointment Tickets ----\n");
             for (int i = 0; i < numero_ticket_urgencia; i++)
             {
                 imprimir_Ticket_Consulta_Urgencia(&urgencias[i]);
@@ -99,15 +115,15 @@ int main()
         case 4:
             if (numero_ticket_marcado > 0)
             {
-                printf("insira a sequencia de ticket: ");
+                printf("Enter the ticket sequence number: ");
                 scanf("%d", &numeroTicket);
 
                 // Verificar se o ticket é do tipo inteiro e não do tipo char
 
                 while (getchar() != '\n' || numeroTicket <= 0)
                 {
-                    printf("Erro: Insira um dado válido do tipo inteiro.\n");
-                    printf("insira a sequencia de ticket: ");
+                    printf("Error: Please insert a valid integer.\n");
+                    printf("Insert ticket sequence: ");
                     scanf("%d", &numeroTicket);
                 }
 
@@ -115,7 +131,7 @@ int main()
 
                 while (numeroTicket > numero_ticket_marcado)
                 {
-                    printf("Ticket nao existe, insira sequencia válida\n");
+                    printf("Ticket does not exist. Please enter a valid sequence number (menu option 3)\n");
                     scanf("%d", &numeroTicket);
                 }
                 if (strcmp(marcados[numeroTicket - 1].estado, "Nao atendido.") == 0)
@@ -124,27 +140,27 @@ int main()
                 }
                 else
                 {
-                    printf("Ticket ja atendido\n");
+                    printf("Ticket already attended.\n");
                 }
             }
             else
             {
-                printf("Nenhum ticket disponível para atendimento.\n");
+                printf("No tickets available for attendance.\n");
             }
             break;
 
         case 5:
             if (numero_ticket_urgencia > 0)
             {
-                printf("insira a sequencia de ticket: ");
+                printf("Enter the ticket sequence number:");
                 scanf("%d", &numeroTicket);
 
                 // Verificar se o ticket é do tipo inteiro e não do tipo char
 
                 while (getchar() != '\n' || numeroTicket <= 0)
                 {
-                    printf("Erro: Insira um dado válido do tipo inteiro ou maior que zero.\n");
-                    printf("insira a sequencia de ticket: ");
+                    printf("Error: Please insert a valid integer or a number greater than zero.\n");
+                    printf("Insert ticket sequence: ");
                     scanf("%d", &numeroTicket);
                 }
 
@@ -152,7 +168,7 @@ int main()
                 while (numeroTicket > numero_ticket_urgencia)
 
                 {
-                    printf("Ticket nao existe, insira sequencia válida\n");
+                    printf("Ticket does not exist. Please enter a valid sequence number (menu option 3)\n");
                     scanf("%d", &numeroTicket);
                 }
                 if (strcmp(urgencias[numeroTicket - 1].estado, "Nao atendido.") == 0)
@@ -161,28 +177,28 @@ int main()
                 }
                 else
                 {
-                    printf("Ticket ja atendido\n");
+                    printf("Ticket already attended.\n");
                 }
             }
             else
             {
-                printf("Nenhum ticket disponível para atendimento.\n");
+                printf("No tickets available for attendance.\n");
             }
             break;
         case 6:
             if (numero_ticket_urgencia > 0)
             {
-                printf("insira a sequencia de ticket: ");
+                printf("Insert ticket sequence:");
                 scanf("%d", &numeroTicket);
                 while (getchar() != '\n' || numeroTicket <= 0)
                 {
-                    printf("Erro: Insira um dado válido do tipo inteiro ou maior que zero.\n");
-                    printf("insira a sequencia de ticket: ");
+                    printf("Error: Please insert a valid integer or a number greater than zero.\n");
+                    printf("Insert ticket sequence: ");
                     scanf("%d", &numeroTicket);
                 }
                 while (numeroTicket > numero_ticket_urgencia)
                 {
-                    printf("Ticket nao existe, insira sequencia válida\n");
+                    printf("Ticket does not exist. Please enter a valid sequence number (menu option 3)\n");
                     scanf("%d", &numeroTicket);
                 }
 
@@ -190,7 +206,7 @@ int main()
             }
             else
             {
-                printf("Nenhum ticket disponível para atendimento.\n");
+                printf("No tickets available for attendance.\n");
             }
             break;
         case 7:
@@ -207,10 +223,10 @@ int main()
             gerar_mapa_receita_c_marcadas(marcados);
             break;
         case 11:
-            printf("Sistema encerrado...\n");
+            printf("System closed...\n");
             break;
         default:
-            printf("Opção inválida, selecione uma das opções anteriores.\n");
+            printf("Invalid option, please select one of the previous options.\n");
         }
     } while (opcao != 11);
 
