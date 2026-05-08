@@ -10,7 +10,7 @@ markdown
 
 ---
 
-## 📋 Overview
+## Overview
 
 This project simulates a ticketing system used in a healthcare environment. It manages the creation and handling of tickets for different types of appointments, applying validation rules and service constraints to ensure correct ticket processing.
 
@@ -20,17 +20,17 @@ The system was designed with a focus on **structured programming**, **input vali
 
 ## ✨ Features
 
-- 🎫 Generate tickets for scheduled and urgent appointments
-- 🔢 Sequential and automatic ticket numbering
-- 🕐 Registration of ticket creation date and time
-- ✅ Input validation and business rule enforcement
-- 🚨 Daily limit control for urgent appointment tickets
-- 📁 Modular code organization using a header file
-- 🔧 Compilation support through a Makefile
+- Generate tickets for scheduled and urgent appointments
+- Sequential and automatic ticket numbering
+- Registration of ticket creation date and time
+- Input validation and business rule enforcement
+- Daily limit control for urgent appointment tickets
+- Modular code organization using a header file
+- Compilation support through a Makefile
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```text
 healthcare-ticket-system/
@@ -43,7 +43,7 @@ healthcare-ticket-system/
 
 ---
 
-## ⚙️ Requirements
+## Requirements
 
 Make sure you have the following installed before compiling:
 
@@ -76,31 +76,9 @@ To remove compiled files and the executable:
 ```bash
 make clean
 ```
-
 ---
 
-## 💻 Example Output
-
-```
-========================================
-       HEALTHCARE TICKET SYSTEM
-========================================
- [1] Scheduled Appointment
- [2] Urgent Appointment
- [0] Exit
-----------------------------------------
-Select an option: 1
-
-Ticket generated successfully!
-  Type   : Scheduled Appointment
-  Number : A001
-  Date   : 08/05/2026 at 09:32
-========================================
-```
-
----
-
-## 🛠️ Technologies Used
+## Technologies Used
 
 | Technology | Purpose |
 |---|---|
@@ -108,17 +86,6 @@ Ticket generated successfully!
 | GCC | Compilation |
 | Makefile | Build automation |
 | Git | Version control |
-
----
-
-## 🔮 Future Improvements
-
-- [ ] Split source into multiple `.c` files for better modularity
-- [ ] Add persistent data storage using files
-- [ ] Improve the terminal UI (e.g., with `ncurses`)
-- [ ] Add unit tests
-- [ ] Generate detailed daily reports and statistics
-- [ ] Refactor for improved scalability
 
 ---
 
