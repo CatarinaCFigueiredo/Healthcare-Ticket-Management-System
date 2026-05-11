@@ -24,20 +24,6 @@ The system was designed with a focus on **structured programming**, **input vali
 - Daily limit control for urgent appointment tickets
 - Modular code organization using a header file
 - Compilation support through a Makefile
-
----
-
-## Project Structure
-
-```text
-healthcare-ticket-system/
-├── ticketsystem.c    # Main source file
-├── ticketsystem.h    # Header file with declarations
-├── Makefile          # Compilation rules
-├── README.md         # Project documentation
-└── .gitignore        # Git ignored files
-```
-
 ---
 
 ## Requirements
@@ -50,7 +36,7 @@ Make sure you have the following installed before compiling:
 
 ---
 
-## 🚀 Getting Started
+## How to Run
 
 ### Compile
 
